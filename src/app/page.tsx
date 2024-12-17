@@ -37,10 +37,13 @@ const Home = () => {
         </div>
       </div>
       <div className="flex items-center space-x-12">
-        <Link href="https://drive.google.com/file/d/1WetZRXwCy8Xnr8eDZCgmZYBvhj9UJNQ1/view?usp=drive_link" target="_blank">
+        <Link
+          href="https://drive.google.com/file/d/1trOUu0bqY42-5pp8yStLktrW0GNi06Cz/view?usp=drive_link"
+          target="_blank"
+        >
           <Button variant="outline" className="text-base">
             Resume
-            <ArrowRight className="pt-[2px]"/>
+            <ArrowRight className="pt-[2px]" />
           </Button>
         </Link>
         <SocialIcons />
