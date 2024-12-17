@@ -1,7 +1,7 @@
 import SocialIcons from "@/components/SocialIcons";
 import { Button } from "@/components/ui/button";
 import Work from "@/components/Work";
-import { ArrowDownRight, ArrowRight, FileDownIcon } from "lucide-react";
+import { ArrowDownRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

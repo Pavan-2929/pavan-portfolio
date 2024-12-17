@@ -1,7 +1,6 @@
 import { projectsData } from "@/data/projects";
-import { ArrowRight, Github, Network } from "lucide-react";
+import { Github, Network } from "lucide-react";
 import React from "react";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import ProjectButton from "./ProjectButton";
 

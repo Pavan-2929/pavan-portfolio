@@ -1,5 +1,3 @@
-import { Herr_Von_Muellerhoff } from "next/font/google";
-
 export const educationData = [
   {
     name: "Gandhinagar University",
