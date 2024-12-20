@@ -42,4 +42,31 @@ export const projectsData = [
     gitHub: "https://github.com/Pavan-2929/DishDash",
     img: "/dishdash.png",
   },
+  {
+    name: "Delicacy (UI/UX)",
+    url: "https://delicacy-2929.vercel.app",
+    description:
+      "A modern UI/UX design for a food delivery platform, featuring smooth animations. (Previous Internship)",
+    techStack: ["React JS", "Tailwind CSS", "Framer-motion"],
+    gitHub: "",
+    img: "/delicacy.png",
+  },
+  {
+    name: "Digital Marketing (UI/UX)",
+    url: "https://sicu-aura-3-29.vercel.app",
+    description:
+      "An engaging UI/UX design for a digital marketing platform, emphasizing fluid animations. (Previous Internship)",
+    techStack: ["React JS", "Tailwind CSS", "Framer-motion"],
+    gitHub: "",
+    img: "/digitalmarketing.png",
+  },
+  {
+    name: "Content-management (UI/UX)",
+    url: "https://figma-4-2929.vercel.app",
+    description:
+      "A sleek UI/UX design for a content management system, with smooth transitions. (Previous Internship)",
+    techStack: ["React JS", "Tailwind CSS", "Framer-motion"],
+    gitHub: "",
+    img: "/content.png",
+  },
 ];

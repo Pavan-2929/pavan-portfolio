@@ -1,15 +1,21 @@
+"use client"
+
 import Link from "next/link";
 import React from "react";
 import ThemeToggler from "./ThemeToggler";
-
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 const Navbar = () => {
+
+  const pathName = usePathname()
   return (
     <div className="flex items-center justify-between py-6 sticky">
       <div className="space-x-4 md:space-x-8 lg:space-x-12 font-medium text-muted-foreground tracking-wide">
-        <Link href="/" className="hover:text-foreground">
+        <Link href="/" className={cn("hover:text-foreground", pathName === "/" ? "text-foreground/90" : "")}
+        >
           Home
         </Link>
-        <Link className="hover:text-foreground" href="/projects">
+        <Link className={cn("hover:text-foreground", pathName === "/projects" ? "text-foreground/90" : "")} href="/projects">
           Projects
         </Link>
         <Link
@@ -23,7 +29,7 @@ const Navbar = () => {
       <div>
         <ThemeToggler />
       </div>
-    </div>
+    </div >
   );
 };
 

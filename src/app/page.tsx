@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Hackathones from "@/components/Hackathones";
+import Image from "next/image";
 const Home = () => {
   return (
     <div>
@@ -24,15 +25,17 @@ const Home = () => {
             tea
           </p>
           <p className="text-lg  text-primary font-semibold tracking-wide pt-5 flex  md:items-center">
-            Find proffesional regarding me{" "}
-            <ArrowDownRight className="size-5 animate-bounce ml-2 w-fit md:block hidden" />
+            Find proffesional information regarding me{" "}
+            <ArrowDownRight className="size-5 ml-2 w-fit md:block hidden" />
           </p>
         </div>
         <div>
-          <img
+          <Image
             src="/cover_image.png"
             alt="cover iamge"
-            className="h-44 w-72 bg-cover"
+            className="bg-cover"
+            width={200}
+            height={250}
           />
         </div>
       </div>
@@ -49,19 +52,19 @@ const Home = () => {
         <SocialIcons />
       </div>
       <div className="pt-16">
-        <Tabs defaultValue="account" className="flex w-full flex-col">
+        <Tabs defaultValue="work" className="flex w-full flex-col">
           <TabsList>
-            <TabsTrigger className="w-full" value="account">
+            <TabsTrigger className="w-full" value="work">
               Work
             </TabsTrigger>
-            <TabsTrigger className="w-full" value="password">
+            <TabsTrigger className="w-full" value="education">
               Education
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="account">
+          <TabsContent value="work">
             <Work />
           </TabsContent>
-          <TabsContent value="password">
+          <TabsContent value="education">
             <Education />
           </TabsContent>
         </Tabs>
