@@ -34,6 +34,15 @@ export const projectsData = [
     img: "/cover_image.png",
   },
   {
+    name: "Chat-app Socket.io",
+    url: "https://chat-app-2929.onrender.com",
+    description:
+      "Chat App built with the MERN stack, integrated with Socket.IO, styled using ShadCN UI and Tailwind CSS. Features include React Hook Form with Zod validations, a dark-night theme, and real-time online status updates.",
+    techStack: ["React JS", "Node JS", "MongoDB", "Socket.io", "Cloudinary"],
+    github: "https://github.com/Pavan-2929/pavan-portfolio",
+    img: "/chatapp.png",
+  },
+  {
     name: "Dishdash",
     url: "https://dishdash-2929.onrender.com",
     description:
