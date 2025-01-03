@@ -15,7 +15,7 @@ const Home = () => {
       <div className="flex flex-wrap-reverse md:flex-nowrap justify-between gap-x-20 lg:py-10 py-6">
         <div className="pt-4 md:pt-0">
           <h1 className="md:text-5xl text-3xl font-bold pb-5 font-serif tracking-tight decoration-border/75 decoration-2">
-            hi Pavan here 👋
+            Hi Pavan here 👋
           </h1>
           <p className="text-foreground pb-3 text-[17px] font-[400] tracking-wide">
             19 year old web developer from Ahmedabad
@@ -33,7 +33,7 @@ const Home = () => {
           <Image
             src="/cover_image.png"
             alt="cover iamge"
-            className="bg-cover"
+            className="bg-cover rounded-md"
             width={200}
             height={250}
           />
