@@ -25,6 +25,22 @@ export const projectsData = [
     img: "/casepanda.png",
   },
   {
+    name: "SnapFlow",
+    url: "",
+    description:
+      "Developed a social media app with session-based auth using Lucia-auth, Zod for validation, and React-hook-form. Added advanced caching, optimistic updates, hashtag counting, and infinite scrolling for 'For You' and 'Following' feeds.",
+    techStack: [
+      "Next JS",
+      "Prisma",
+      "PostgreSQL",
+      "React-Query",
+      "Lucia-auth",
+      "ShadCN UI",
+    ],
+    gitHub: "https://github.com/Pavan-2929/SnapFlow",
+    img: "/snapflow.png",
+  },
+  {
     name: "Sicu-aura Pricing Page",
     url: "https://www.sicu-aura-innoviz.com/pricing",
     description:
