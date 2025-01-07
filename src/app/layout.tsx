@@ -5,6 +5,7 @@ import { Calistoga, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatBotIcon from "./chatbot/ChatBotIcon";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -41,6 +42,7 @@ export default function RootLayout({
           <div className="max-w-3xl mx-auto md:px-8 sm:px-6 px-4">
             <Navbar />
             {children}
+            <ChatBotIcon />
             <Footer />
           </div>
         </ThemeProvider>

@@ -3,20 +3,19 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
-import { Button } from "./ui/button";
 const ThemeToggler = () => {
   const { setTheme, theme } = useTheme();
 
   return (
     <>
       {theme === "light" ? (
-        <Button onClick={() => setTheme("dark")} variant="ghost" size="icon">
-          <Moon />
-        </Button>
+        <div onClick={() => setTheme("dark")} >
+          <Moon className="w-6 h-6 text-foreground/75" />
+        </div>
       ) : (
-        <Button onClick={() => setTheme("light")} variant="ghost" size="icon">
-          <Sun />
-        </Button>
+        <div onClick={() => setTheme("light")}>
+          <Sun className="h-6 w-6 text-foreground/75" />
+        </div>
       )}
     </>
   );
