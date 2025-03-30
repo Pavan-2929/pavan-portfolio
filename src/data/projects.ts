@@ -58,7 +58,7 @@ export const projectsData = [
   },
   {
     name: "SnapFlow",
-    url: "",
+    url: "https://snap-flow.vercel.app",
     description:
       "Developed a social media app with session-based auth using Lucia-auth, Zod for validation, and React-hook-form. Added advanced caching, optimistic updates, hashtag counting, and infinite scrolling for 'For You' and 'Following' feeds.",
     techStack: [
