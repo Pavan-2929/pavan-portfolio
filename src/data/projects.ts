@@ -1,18 +1,25 @@
 export const projectsData = [
   {
-    name: "roys&sonslandscaping",
-    url: "https://royandsonslandscaping.in",
+    name: "FairShare",
+    url: "https://fair-share-29.vercel.app",
     description:
-      "Designed and developed a fully responsive landscaping website, featuring a service page, gallery, contact page, header, footer, animations, and a sidebar to enhance user experience.",
-    techStack: ["React JS", "Tailwind CSS", "Framer-motion", "Firebase"],
-    gitHub: "",
-    img: "/roys.png",
+      "Integrated multi-auth via BetterAuth (OTP, Magic Link, Google, GitHub) with instant profile updates. Optimized transactions using React Query, AI-powered image-based entry, PDF export, and email functionality. Built a wallet system, goal tracking, invoicing, an admin panel, and an AI chatbot. Added category-based expense tracking, transactions analysis, and automated financial insights.",
+    techStack: [
+      "Next JS",
+      "Prisma",
+      "PostgreSQL",
+      "React-Query",
+      "Pdf JS",
+      "Better Auth",
+    ],
+    gitHub: "https://github.com/Pavan-2929/fairshare",
+    img: "/fairshare.png",
   },
   {
     name: "CasePanda",
     url: "https://casepanda-29.vercel.app",
     description:
-      "Build an iPhone case covers resposnive website with advanced authentication, real-time order tracking, multiple payment options (Cash, Stripe), and an admin dashboard for order management and analytics.",
+      "Implemented OTP-based email verification and password recovery via Next-Auth. Built an Admin Panel with real-time order tracking (Pending, Confirmed, Shipped, Delivered). Integrated drag-and-drop image uploads with Firebase. Designed a 3-step customization flow. Optimized database with Redux-Persist. Developed an analytics dashboard with bar/pie charts and dual payment options.",
     techStack: [
       "Next JS",
       "MongoDB",
@@ -23,6 +30,31 @@ export const projectsData = [
     ],
     gitHub: "https://github.com/Pavan-2929/casepanda",
     img: "/casepanda.png",
+  },
+  {
+    name: "roys&sonslandscaping",
+    url: "https://royandsonslandscaping.in",
+    description:
+      "Designed and developed a fully responsive landscaping website, featuring a service page, gallery, contact page, header, footer, animations, and a sidebar to enhance user experience.",
+    techStack: ["React JS", "Tailwind CSS", "Framer-motion", "Firebase"],
+    gitHub: "",
+    img: "/roys.png",
+  },
+  {
+    name: "AuthToolKit",
+    url: "https://auth-tool-kit-mern-29.vercel.app",
+    description:
+      "Developed an end-to-end AuthToolKit platform with OTP valdiations, email-password magic link along with  google auth with jwt token and cookies with reacthookform and zod validations alognt with shadcn UI woth react query opmtizaiutons and with profile updation with cloudinary and multer.",
+    techStack: [
+      "React JS",
+      "Node JS",
+      "MongoDB",
+      "React-Query",
+      "Redux-Toolkit",
+      "Zod",
+    ],
+    github: "https://github.com/Pavan-2929/AuthToolKit-MERN",
+    img: "./authtoolkit.png",
   },
   {
     name: "SnapFlow",
