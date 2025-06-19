@@ -41,7 +41,7 @@ const Home = () => {
       </div>
       <div className="flex items-center space-x-12">
         <Link
-          href="https://drive.google.com/file/d/1trOUu0bqY42-5pp8yStLktrW0GNi06Cz/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1CSxXt_O0avpVehhkRLaUqU98L7dKmc0h/view?usp=drive_link"
           target="_blank"
         >
           <Button variant="outline" className="text-base">
