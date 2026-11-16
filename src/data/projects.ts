@@ -1,5 +1,24 @@
 export const projectsData = [
   {
+    name: "MatchForge — Entity Resolution Toolkit",
+    url: "https://match-forge-one.vercel.app",
+    description:
+      "Designed and published @matchforge/core, an open-source TypeScript package on npm for string similarity, record matching, and entity resolution. Provides nine similarity algorithms, configurable text preprocessing, weighted multi-field matching, and blocking-based candidate generation. Supports dataset deduplication, CSV record matching, and evaluation workflows with metrics including precision, recall, F1-score, candidate recall, and reduction ratio. Includes interactive documentation and playgrounds to help developers explore and integrate the package.",
+    techStack: [
+      "TypeScript",
+      "Node.js",
+      "JavaScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vitest",
+      "npm Workspaces",
+    ],
+    gitHub: "https://github.com/Pavan-2929/MatchForge",
+    npm: "https://www.npmjs.com/package/@matchforge/core",
+    img: "/matchforge.png",
+  },
+  {
     name: "FairShare",
     url: "https://fair-share-29.vercel.app",
     description:

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./global.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Calistoga, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ChatBotIcon from "./chatbot/ChatBotIcon";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -15,8 +14,9 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: "Pavan | Portfolio",
-  description: "This is Pavan's portfolio",
+  title: "Pavan Kapadiya | M.Tech CSE @ IIIT Delhi",
+  description:
+    "Portfolio of Pavan Kapadiya, M.Tech Computer Science student at IIIT Delhi and software developer.",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
         className={cn(
           "font-sans antialiased",
           inter.variable,
-          calistoga.variable
+          calistoga.variable,
         )}
       >
         <ThemeProvider
@@ -42,7 +42,6 @@ export default function RootLayout({
           <div className="max-w-3xl mx-auto md:px-8 sm:px-6 px-4">
             <Navbar />
             {children}
-            <ChatBotIcon />
             <Footer />
           </div>
         </ThemeProvider>

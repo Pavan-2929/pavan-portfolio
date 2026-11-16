@@ -1,39 +1,15 @@
 export const workData = [
   {
     name: "Sicu-Aura",
-    href: "https://www.sicu-aura.com",
-    heading: "MERN-Stack Developer (Intern)",
-    logo: "/sicuaura.png",
+    heading: "MERN Stack Developer Intern",
     start: "March 2024",
     end: "August 2024",
-    projects: [
-      {
-        name: "Roy's & Sons Landscaping",
-        href: "https://www.royandsonslandscaping.in",
-        description: [
-          "Built a client's landscaping website, including a service page, gallery page, contact page, header, and footer.",
-          "Ensured the website was fully responsive with animations and a sidebar for better user experience.",
-        ],
-      },
-      {
-        name: "Sicu-Aura-Innoviz",
-        href: "https://www.sicu-aura-innoviz.com/pricing",
-        description: [
-          "Built a complete pricing page, including software, marketing, and designing sections with limited additions.",
-          "Implemented dynamic 'Add to Cart' functionality using Redux Toolkit with persistence and full checkout functionality, including steppers and a wheel coupon discount system.",
-          "Integrated a chatbot into the website to enhance user support.",
-        ],
-      },
-      {
-        name: "Delicacy",
-        href: "https://delicacy-2929.vercel.app",
-        description: [
-          "Developed a semi-eCommerce food ordering website with Google authentication using Firebase.",
-          "Added an animated and fully responsive navbar for all screens and WhatsApp checkout functionality with Redux Toolkit persistence.",
-          "Implemented a category selection and quantity option while adding food items to the cart.",
-          "Added about, reviews, best sales, and product links to the navbar.",
-        ],
-      },
+    description: [
+      "Developed responsive web applications for client projects, focusing on frontend development, functionality, and user experience.",
+      "Built a responsive landscaping business website with service listings, an image gallery, contact functionality, and interactive navigation.",
+      "Developed a dynamic pricing platform with service-based pricing, persistent cart management using Redux Toolkit, and a multi-step checkout system with coupon discounts.",
+      "Built a food ordering platform with Firebase-based Google authentication, category-based product selection, persistent cart functionality, and WhatsApp checkout.",
+      "Implemented responsive layouts, animations, and interactive UI components across multiple web applications.",
     ],
   },
 ];

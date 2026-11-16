@@ -6,7 +6,7 @@ const SocialIcons = () => {
   return (
     <div className="text-muted-foreground flex space-x-6">
       <Link
-        href="www.linkedin.com/in/pavankapadiya"
+        href="https://www.linkedin.com/in/pavankapadiya"
         className="hover:text-foreground transition-colors duration-300"
         target="_blank"
       >

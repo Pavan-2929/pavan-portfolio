@@ -3,57 +3,83 @@ import { Button } from "@/components/ui/button";
 import Work from "@/components/Work";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Hackathones from "@/components/Hackathones";
 import Image from "next/image";
+
 const Home = () => {
   return (
     <div>
-      <div className="flex flex-wrap-reverse md:flex-nowrap justify-between gap-x-20 lg:py-10 py-6">
-        <div className="pt-4 md:pt-0">
-          <h1 className="md:text-5xl text-3xl font-bold pb-5 font-serif tracking-tight decoration-border/75 decoration-2">
+      {/* Hero Section */}
+      <section className="grid grid-cols-1 items-center gap-10 py-8 md:grid-cols-[minmax(0,1fr)_230px] md:gap-10 lg:py-12">
+        {/* Introduction */}
+        <div className="order-2 md:order-1">
+          <h1 className="pb-5 font-serif text-4xl font-bold tracking-tight md:text-5xl">
             Hi Pavan here 👋
           </h1>
-          <p className="text-foreground pb-3 text-[17px] font-[400] tracking-wide">
-            19 year old web developer from Ahmedabad
+
+          <p className="pb-3 text-[17px] tracking-wide text-foreground">
+            21-year-old Software Developer{" "}
           </p>
-          <p className="text-foreground  text-[17px] tracking-wide font-400">
-            I like to develop full-stack website and playing chess with cup of
-            tea
+
+          <p className="text-[17px] leading-relaxed tracking-wide text-foreground">
+            Passionate about building full-stack applications, exploring
+            technology, and enjoying a good game of chess with a cup of tea.
           </p>
-          <p className="text-lg  text-primary font-semibold tracking-wide pt-5 flex  md:items-center">
-            Find proffesional information regarding me{" "}
-            <ArrowDownRight className="size-5 ml-2 w-fit md:block hidden" />
+
+          <p className="flex items-center pt-5 text-lg font-semibold tracking-wide text-primary">
+            Find professional information about me
+            <ArrowDownRight className="ml-2 hidden size-5 md:block" />
           </p>
+
+          {/* Resume and Social Links */}
+          <div className="mt-9 flex flex-wrap items-center gap-7">
+            <Button variant="outline" asChild className="text-base">
+              <Link
+                href="https://drive.google.com/file/d/1hIU3UmHoIWi36Ulm8PZElMP_Iee3_F8C/view?usp=drive_link"
+                target="_blank"
+              >
+                Resume
+                <ArrowRight className="ml-1 size-4" />
+              </Link>
+            </Button>
+
+            <SocialIcons />
+          </div>
         </div>
-        <div>
-          <Image
-            src="/cover_image.png"
-            alt="cover iamge"
-            className="bg-cover rounded-md"
-            width={200}
-            height={250}
-          />
+
+        {/* Hero Illustration */}
+        <div className="order-1 flex justify-center md:order-2 md:justify-end">
+          <div className="relative h-[220px] w-[220px] shrink-0 overflow-hidden rounded-2xl md:h-[250px] md:w-[250px]">
+            {/* Light theme */}
+            <Image
+              src="/cover_image_light.png"
+              alt="Developer workspace with coding, coffee, and chess"
+              fill
+              priority
+              sizes="(max-width: 768px) 220px, 250px"
+              className="object-cover dark:hidden"
+            />
+
+            {/* Dark theme */}
+            <Image
+              src="/cover_image_dark.png"
+              alt="Developer workspace with coding, coffee, and chess"
+              fill
+              priority
+              sizes="(max-width: 768px) 220px, 250px"
+              className="hidden object-cover dark:block"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex items-center space-x-12">
-        <Link
-          href="https://drive.google.com/file/d/1CSxXt_O0avpVehhkRLaUqU98L7dKmc0h/view?usp=drive_link"
-          target="_blank"
-        >
-          <Button variant="outline" className="text-base">
-            Resume
-            <ArrowRight className="pt-[2px]" />
-          </Button>
-        </Link>
-        <SocialIcons />
-      </div>
-      <div className="pt-16">
+      </section>
+
+      {/* Work and Education */}
+      <section className="pt-10 md:pt-12">
         <Tabs defaultValue="work" className="flex w-full flex-col">
-          <TabsList>
+          <TabsList className="w-full">
             <TabsTrigger className="w-full" value="work">
               Work
             </TabsTrigger>
@@ -61,20 +87,26 @@ const Home = () => {
               Education
             </TabsTrigger>
           </TabsList>
+
           <TabsContent value="work">
             <Work />
           </TabsContent>
+
           <TabsContent value="education">
             <Education />
           </TabsContent>
         </Tabs>
-      </div>
-      <div className="md:mt-20 mt-12">
+      </section>
+
+      {/* Projects */}
+      <section className="mt-14 md:mt-20">
         <Projects />
-      </div>
-      <div className="md:mt-20 mt-12">
+      </section>
+
+      {/* Hackathons */}
+      <section className="mt-14 md:mt-20">
         <Hackathones />
-      </div>
+      </section>
     </div>
   );
 };

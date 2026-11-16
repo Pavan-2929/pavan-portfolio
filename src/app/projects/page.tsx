@@ -1,68 +1,167 @@
 import { projectsData } from "@/data/projects";
-import { Github, Network } from "lucide-react";
-import React from "react";
+import { ArrowLeft, ArrowUpRight, Github, Package } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import ProjectButton from "@/components/ProjectButton";
 
-const Projects = () => {
+const ProjectsPage = () => {
   return (
-    <div className="my-12">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-4">
+    <main className="my-10 mb-20 sm:my-14">
+      {/* Page heading */}
+      <header className="mb-10 sm:mb-12">
+        <Link
+          href="/"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
+          Back home
+        </Link>
+
         <div>
-          <p className="text-3xl sm:text-4xl font-bold font-serif">
-            My Projects
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            Things I've built
+          </p>
+
+          <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">
+            Projects<span className="text-muted-foreground">.</span>
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+            A collection of developer tools, web applications, and experiments
+            built while exploring software engineering and solving practical
+            problems.
           </p>
         </div>
-        <ProjectButton />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
-        {projectsData &&
-          projectsData.map((project, index) => (
-            <div
-              key={index}
-              className="border px-4 sm:px-6 py-4 sm:py-6 rounded-md"
+      </header>
+
+      {/* Project grid */}
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-12">
+        {projectsData.map((project, index) => {
+          const github =
+            "gitHub" in project
+              ? project.gitHub
+              : "github" in project
+                ? project.github
+                : "";
+
+          const imageSrc = project.img.startsWith("./")
+            ? project.img.replace("./", "/")
+            : project.img;
+
+          return (
+            <article
+              key={project.name}
+              className="group min-w-0"
+              style={{
+                animation: "project-card-enter 500ms ease-out both",
+                animationDelay: `${Math.min(index, 5) * 70}ms`,
+              }}
             >
-              <Link href={project.url}>
-                <img
-                  src={project.img}
-                  alt=""
-                  className="w-full h-[180px] sm:h-[200px] object-cover rounded-md"
+              {/* Project image */}
+              <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.name}`}
+                className="relative mb-5 block aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30"
+              >
+                <Image
+                  src={imageSrc}
+                  alt={`${project.name} preview`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 550px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 />
+
+                <span className="absolute bottom-3 right-3 flex size-9 items-center justify-center rounded-full border bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                  <ArrowUpRight className="size-4" />
+                </span>
               </Link>
-              <p className="text-lg pt-4 font-semibold">{project.name}</p>
-              <p className="text-sm sm:text-[14px] leading-[22px] pt-2 text-muted-foreground">
-                {project.description}
-              </p>
-              <div className="flex gap-2 flex-wrap pt-4">
-                {project.techStack.map((tech, i) => (
-                  <div key={i}>
-                    <p className="bg-accent text-xs rounded-md w-fit px-2 py-1">
-                      {tech}
-                    </p>
+
+              {/* Project information */}
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
+                      {index === 0 && (
+                        <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-emerald-500">
+                          Featured · Open source
+                        </span>
+                      )}
+                    </div>
+
+                    <h2 className="text-lg font-semibold tracking-tight transition-colors group-hover:text-foreground sm:text-xl">
+                      {project.name}
+                    </h2>
                   </div>
-                ))}
-              </div>
-              <div className="flex items-center space-x-4">
-                <Link
-                  href={project.url}
-                  className="flex items-center bg-accent-foreground text-primary-foreground px-2 py-1 rounded-md font-semibold mt-4 text-[13px] gap-x-1"
-                >
-                  <Network className="h-4 w-4" /> Live
-                </Link>
-                {project.gitHub && (
-                  <Link
-                    href={project.gitHub}
-                    className="flex items-center bg-accent-foreground text-primary-foreground px-2 py-1 rounded-md font-semibold mt-4 text-[13px] gap-x-1"
-                  >
-                    <Github className="h-4 w-4" /> GitHub
-                  </Link>
+
+                  <span className="shrink-0 pt-1 font-mono text-xs text-muted-foreground">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                {project.techStack?.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.techStack.map((technology) => (
+                      <span
+                        key={technology}
+                        className="rounded-md bg-accent/70 px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                 )}
+
+                {/* Project links */}
+                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 border-t pt-4">
+                  <Link
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground transition-colors hover:text-primary"
+                  >
+                    Live project
+                    <ArrowUpRight className="size-3.5" />
+                  </Link>
+
+                  {github && (
+                    <Link
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <Github className="size-3.5" />
+                      GitHub
+                      <ArrowUpRight className="size-3" />
+                    </Link>
+                  )}
+
+                  {"npm" in project && project.npm && (
+                    <Link
+                      href={project.npm}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <Package className="size-3.5" />
+                      npm
+                      <ArrowUpRight className="size-3" />
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            </article>
+          );
+        })}
       </div>
-    </div>
+    </main>
   );
 };
 
-export default Projects;
+export default ProjectsPage;
