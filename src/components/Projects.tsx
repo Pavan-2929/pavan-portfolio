@@ -7,7 +7,7 @@ const Projects = () => {
     <section className="mb-20 w-full">
       <div className="mb-7 flex items-center justify-between">
         <p className="font-bold uppercase tracking-[0.18em] text-muted-foreground">
-          What I'm Building{" "}
+          I&apos;m currently building...{" "}
         </p>
 
         <Link

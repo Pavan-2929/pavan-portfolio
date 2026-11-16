@@ -10,7 +10,7 @@ const ProjectsPage = () => {
       <header className="mb-10 sm:mb-12">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="group mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
           Back home
@@ -18,7 +18,7 @@ const ProjectsPage = () => {
 
         <div>
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Things I've built
+            Here&apos;s what I&apos;ve built{" "}
           </p>
 
           <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">
@@ -43,9 +43,29 @@ const ProjectsPage = () => {
                 ? project.github
                 : "";
 
+          const liveUrl = project.url || "";
+          const npmUrl = "npm" in project ? project.npm : "";
           const imageSrc = project.img.startsWith("./")
             ? project.img.replace("./", "/")
             : project.img;
+
+          const preview = (
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30">
+              <Image
+                src={imageSrc}
+                alt={`${project.name} preview`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 550px"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+              />
+
+              {liveUrl && (
+                <span className="absolute bottom-3 right-3 flex size-9 items-center justify-center rounded-full border bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                  <ArrowUpRight className="size-4" />
+                </span>
+              )}
+            </div>
+          );
 
           return (
             <article
@@ -57,37 +77,31 @@ const ProjectsPage = () => {
               }}
             >
               {/* Project image */}
-              <Link
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Visit ${project.name}`}
-                className="relative mb-5 block aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30"
-              >
-                <Image
-                  src={imageSrc}
-                  alt={`${project.name} preview`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 550px"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
-                />
-
-                <span className="absolute bottom-3 right-3 flex size-9 items-center justify-center rounded-full border bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-                  <ArrowUpRight className="size-4" />
-                </span>
-              </Link>
+              {liveUrl ? (
+                <Link
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.name}`}
+                  className="mb-5 block"
+                >
+                  {preview}
+                </Link>
+              ) : (
+                <div className="mb-5">{preview}</div>
+              )}
 
               {/* Project information */}
               <div>
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <div className="mb-2 flex flex-wrap items-center gap-2">
-                      {index === 0 && (
+                    {index === 0 && (
+                      <div className="mb-2">
                         <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-emerald-500">
                           Featured · Open source
                         </span>
-                      )}
-                    </div>
+                      </div>
+                    )}
 
                     <h2 className="text-lg font-semibold tracking-tight transition-colors group-hover:text-foreground sm:text-xl">
                       {project.name}
@@ -117,44 +131,48 @@ const ProjectsPage = () => {
                   </div>
                 )}
 
-                {/* Project links */}
-                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 border-t pt-4">
-                  <Link
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground transition-colors hover:text-primary"
-                  >
-                    Live project
-                    <ArrowUpRight className="size-3.5" />
-                  </Link>
+                {/* Available project links */}
+                {(liveUrl || github || npmUrl) && (
+                  <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 border-t pt-4">
+                    {liveUrl && (
+                      <Link
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground transition-colors hover:text-primary"
+                      >
+                        Live project
+                        <ArrowUpRight className="size-3.5" />
+                      </Link>
+                    )}
 
-                  {github && (
-                    <Link
-                      href={github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      <Github className="size-3.5" />
-                      GitHub
-                      <ArrowUpRight className="size-3" />
-                    </Link>
-                  )}
+                    {github && (
+                      <Link
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        <Github className="size-3.5" />
+                        GitHub
+                        <ArrowUpRight className="size-3" />
+                      </Link>
+                    )}
 
-                  {"npm" in project && project.npm && (
-                    <Link
-                      href={project.npm}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      <Package className="size-3.5" />
-                      npm
-                      <ArrowUpRight className="size-3" />
-                    </Link>
-                  )}
-                </div>
+                    {npmUrl && (
+                      <Link
+                        href={npmUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        <Package className="size-3.5" />
+                        npm
+                        <ArrowUpRight className="size-3" />
+                      </Link>
+                    )}
+                  </div>
+                )}
               </div>
             </article>
           );

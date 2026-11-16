@@ -51,17 +51,7 @@ export const projectsData = [
     img: "/casepanda.png",
   },
   {
-    name: "roys&sonslandscaping",
-    url: "https://royandsonslandscaping.in",
-    description:
-      "Designed and developed a fully responsive landscaping website, featuring a service page, gallery, contact page, header, footer, animations, and a sidebar to enhance user experience.",
-    techStack: ["React JS", "Tailwind CSS", "Framer-motion", "Firebase"],
-    gitHub: "",
-    img: "/roys.png",
-  },
-  {
     name: "AuthToolKit",
-    url: "https://auth-tool-kit-mern-29.vercel.app",
     description:
       "Developed an end-to-end AuthToolKit platform with OTP valdiations, email-password magic link along with  google auth with jwt token and cookies with reacthookform and zod validations alognt with shadcn UI woth react query opmtizaiutons and with profile updation with cloudinary and multer.",
     techStack: [
@@ -77,7 +67,6 @@ export const projectsData = [
   },
   {
     name: "SnapFlow",
-    url: "https://snap-flow.vercel.app",
     description:
       "Developed a social media app with session-based auth using Lucia-auth, Zod for validation, and React-hook-form. Added advanced caching, optimistic updates, hashtag counting, and infinite scrolling for 'For You' and 'Following' feeds.",
     techStack: [
@@ -92,17 +81,7 @@ export const projectsData = [
     img: "/snapflow.png",
   },
   {
-    name: "Sicu-aura Pricing Page",
-    url: "https://www.sicu-aura-innoviz.com/pricing",
-    description:
-      "Developed a dynamic pricing page featuring sections for software, marketing, and design, implemented 'Add to Cart' functionality with Redux Toolkit, and integrated a chatbot to enhance user support.",
-    techStack: ["React JS", "Redux-Toolkit", "Tailwind CSS", "Firebase"],
-    gitHub: "",
-    img: "/cover_image.png",
-  },
-  {
     name: "Chat-app Socket.io",
-    url: "https://chat-app-2929.onrender.com",
     description:
       "Chat App built with the MERN stack, integrated with Socket.IO, styled using ShadCN UI and Tailwind CSS. Features include React Hook Form with Zod validations, a dark-night theme, and real-time online status updates.",
     techStack: ["React JS", "Node JS", "MongoDB", "Socket.io", "Cloudinary"],
