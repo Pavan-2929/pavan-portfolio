@@ -102,7 +102,7 @@ This is a list of technologies appearing in the available project information, n
 1. MatchForge — Entity Resolution Toolkit
 
 Website:
-https://match-forge-one.vercel.app
+https://matchforge-docs.vercel.app/
 
 GitHub:
 https://github.com/Pavan-2929/MatchForge
